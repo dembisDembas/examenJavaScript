@@ -1,0 +1,50 @@
+h1{
+    font-family: fantasy;
+}
+body{
+    background-color: rgb(216, 213, 213);
+}
+nav{
+/*height: 30px;*/  font-size: 20px;
+}
+/*p{
+ margin-top: 10px;
+}*/
+
+
+form{
+ padding: 5px;
+}
+#button11{
+float: right;
+}
+#contenu{
+ background-color: white;
+ padding: 5px;
+}
+#bloc1{
+float: left;
+background-color: white;
+width: 48%;
+padding: 5px;
+height: 365px;
+margin-bottom: 3%;
+}
+#bloc2{
+float: right;
+background-color: white;
+width: 48%;
+padding-left: 5px;
+padding-right: 5px;
+padding-top: 5px;
+height: 365px;
+margin-bottom: 3%;
+}
+
+@media print
+{    
+.ne-pas-imprimer, .ne-pas-imprimer *
+{
+display: none !important;
+}
+}

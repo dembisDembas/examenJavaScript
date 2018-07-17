@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Salaire</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href="formulaire.css">
+ 
+</head>
+<body>
+<div class="container">
+    <h1>Bulletin de salaire</h1>
+      <form>
+        <div id="button11">
+          <label for="Date" >Date :</label>
+          <input type="date" >
+        </div>
+        <br>
+        <br>
+        <nav class="navbar navbar-dark bg-dark" >
+            <p style="color: ghostwhite" >Informations personnelles</p>
+          </nav>
+          <div id="contenu">
+                
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4">Prenom</label>
+                            <input type="text" class="form-control" id="inputEmail4" placeholder="Prenom">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputPassword4">Nom</label>
+                            <input type="text" class="form-control" id="inputPassword4" placeholder="Nom">
+                          </div>
+                        </div>
+                        <div class="form-group ">
+                          <label for="inputAddress">Addresse</label>
+                          <input type="text" class="form-control" id="inputAddress" placeholder="rue xx Dakar Senegal">
+                        </div>
+                        <div class="form-group">
+                          <label for="inputAddress2">Email</label>
+                          <input type="email" class="form-control" id="inputAddress2" placeholder="Exemple@mail.com">
+                        </div>
+                          <div class="form-group">
+                            <label for="inputCity">Date et lieu de Naissance</label>
+                            <input type="text" class="form-control" id="inputCity" placeholder="xx/xx/xxxx à Dakar">
+                          </div>
+                          
+                                <fieldset class="form-group">
+                                        <div class="row">
+                                          <legend class="col-form-label col-sm-2 pt-0">Sexe</legend>
+                                          <div class="col-sm-10">
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" >
+                                              <label class="form-check-label" for="gridRadios1">
+                                                Homme
+                                              </label>
+                                            </div>
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                              <label class="form-check-label" for="gridRadios2">
+                                                Femme
+                                              </label>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </fieldset>
+                        <div class="form-row">
+                                <div class="form-group col-md-6">
+                                        <label for="inputState">Nombre personne en charge</label>
+                                        <input type="number" class="form-control" id="nbp">
+                                </div>
+                        <div class="form-group col-md-6">
+                                <label for="inputState">Supplément</label>
+                                <select id="sp1" class="form-control">
+                                  <option selected>Aucun</option>
+                                  <option>Bonus(20%)</option>
+                                  <option>Allocation(25%)</option>
+                                </select>
+                        </div>
+                       </div>
+                      
+          </div>
+          <br>
+        <label for="">Salaire Brut:</label>
+          <input type="number" id="sb"> FCFA
+          <button type="button" class="btn btn-dark ne-pas-imprimer" id="button11" onclick="afficherInfos();">Valider</button>
+          <br>
+          <br>
+          <nav class="navbar navbar-dark bg-dark" >
+                <p style="color: ghostwhite" >Informations Financières</p>
+          </nav>
+          <div id="bloc1">
+            <div >
+                <label for="">Impots     :</label>
+                <input type="number" readonly class="form-control"  id="imp">
+            </div>
+            <div>
+                    <label for="">Assurance  :</label>
+                    <input type="number" readonly class="form-control" id="ass">
+            </div>
+            <div>
+                    <label for="">Régime     :</label>
+                    <input type="number" readonly class="form-control" id="reg">
+                </div>
+                <div>
+                        <label for="">Réduction Impot  :</label>
+                        <input type="number" readonly class="form-control" id="pRed-imp">
+                </div>
+                    <div>
+                            <label for="">Impot Final:</label>
+                            <input type="number" readonly class="form-control" id="red-imp">
+                    </div>
+          </div>
+          <div id="bloc2">
+            <div class="form-row">
+                <label for="">Pourcentage : </label>
+                <input id="pImp" class="form-control " type="number" value="18" readonly>
+            </div>
+            <div class="form-row">
+                    <label for="">Pourcentage : </label>
+                    <input id="pAss" class="form-control " type="number" value="7" readonly>
+            </div>
+                <div class="form-row">
+                        <label for="">Pourcentage : </label>
+                        <input id="pReg" class="form-control " type="number" value="5" readonly >
+                </div>
+          </div>
+          <div>
+          <label for="" >Salaire Net:</label>
+            <input type="number" id="sn" readonly> FCFA
+            </div><br>
+
+            <div>
+                    <button type="button" class="btn btn-dark ne-pas-imprimer" id="button1" onclick="calculerSalaire();">Calculer Salaire</button>
+                    <button type="reset" class="btn btn-dark ne-pas-imprimer" id="button2">Réinitialiser</button>
+                    <button type="button" class="btn btn-dark ne-pas-imprimer" id="button3">Imprimer</button>
+            </div>
+          </form>
+
+          <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">© 2018 Groupe GLAR </p>
+            <ul class="list-inline">
+              <li class="list-inline-item ne-pas-imprimer"><a href="balto:fatoubintou967@gmail.com">Fatou Binetou</a></li>
+              <li class="list-inline-item ne-pas-imprimer"><a href="#">Demba</a></li>
+              <li class="list-inline-item ne-pas-imprimer"><a href="#">Mareme</a></li>
+              <li class="list-inline-item ne-pas-imprimer"><a href="#">Ansou</a></li>
+            </ul>
+          </footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="formulaireBoostrap.js"></script>
+    <script src="jquery-3.3.1.slim.min.js"></script>
+</body>
+</html>
